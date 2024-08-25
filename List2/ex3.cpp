@@ -1,7 +1,6 @@
 #include <stdio.h>
-
+int imprime_matriz(int **m, int linhas, int colunas);
 int main() {
-    int linhas, colunas;
 
     printf("Informe o número de linhas: ");
     scanf("%d", &linhas);
@@ -22,20 +21,19 @@ int main() {
     }
 
     printf("Matriz:\n");
-    for(i = 0; i < linhas; i++){
-        for(j = 0; j < colunas; j++) {
-            printf("%d\t", matriz[i][j]);
-        }
-        printf("\n");
-    }
+    imprime_matriz(matriz, linhas, colunas);
 
     printf("Matriz transposta:\n");
-    for(i = 0; i < colunas; i++){
-        for(j = 0; j < linhas; j++) {
-            printf("%d\t", matriz_transposta[i][j]);
-        }
-        printf("\n");
-    }
+    imprime_matriz(matriz_transposta, colunas, linhas);
 
     return 0;
+}
+
+int imprime_matriz(int **m, int linhas, int colunas) {
+    for(int i = 0; i < linhas; i++) {
+        for(int j = 0; j < colunas; j++) {
+            printf("%d\t", m[i][j]);
+         }
+        printf("\n");
+    }
 }
