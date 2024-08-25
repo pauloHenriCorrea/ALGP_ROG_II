@@ -31,7 +31,7 @@ int main() {
 
 void enter_data(musical_band band[FIVE], int ranking[FIVE]) {
     for (int i = 0; i < FIVE; i++) {
-        // printf("INFORME OS DADOS DA %d° BANDA: \n", i + 1);
+        printf("INFORME OS DADOS DA %d° BANDA: \n", i + 1);
         printf("\tNOME: ");
         fgets(b[i].name, FIFTY, stdin);
         b[i].name[strcspn(b[i].name, "\n")]='\0';
