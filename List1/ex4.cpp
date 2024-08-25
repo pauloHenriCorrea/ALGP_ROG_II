@@ -1,29 +1,29 @@
 #include <stdio.h>
 
-double calculoResidencial(double kWa);
-double calculoIndustrial(double kWa);
-double calculoComercial(double kWa);
+double residential_calculation(double kWa);
+double industrial_calculation(double kWa);
+double commercial_calculation(double kWa);
 
 int main() {
-    double kWh, valor;
-    char tipo;
+    double kWh, value;
+    char type;
 
     printf("Informe a quantidade de kWh consumida e o tipo de instalação: \n");
-    scanf("%lf %c", &kWh, &tipo);
+    scanf("%lf %c", &kWh, &type);
 
-    printf("O valor a se pago é: %lf", valor);
+    printf("O valor a se pago é: %lf", value);
 
-    switch (tipo) {
+    switch (type) {
         case 'R':
-            valor = calculoResidencial(kWh);
+            value = residential_calculation(kWh);
             break;
 
         case 'I':
-            valor = calculoIndustrial(kWh);
+            value = industrial_calculation(kWh);
             break;
 
         case 'C':
-            valor = calculoComercial(kWh);
+            value = commercial_calculation(kWh);
             break;
 
         default:
@@ -32,7 +32,7 @@ int main() {
     }
 }
 
-double calculoResidencial(double kWa) {
+double residential_calculation(double kWa) {
     if (kWa > 500.0) {
         return kWa * 0.65;
     } else {
@@ -40,7 +40,7 @@ double calculoResidencial(double kWa) {
     }
 };
 
-double calculoComercial(double kWa) {
+double commercial_calculation(double kWa) {
     if (kWa > 1000.0) {
         return kWa * 0.60;
     } else {
@@ -48,7 +48,7 @@ double calculoComercial(double kWa) {
     }
 };
 
-double calculoIndustrial(double kWa) {
+double industrial_calculation(double kWa) {
     if (kWa > 5000.0) {
         return kWa * 0.55;
     } else {

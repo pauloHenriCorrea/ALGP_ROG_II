@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-double calcular_area_da_esfera(double raio);
+double calculate_area_sphere(double raio);
 
 int main() {
-    double raio, area;
+    double ray, area;
     printf("Informe o raio: ");
-    scanf("%lf", &raio);
+    scanf("%lf", &ray);
 
-    area = calcular_area_da_esfera(raio);
+    area = calculate_area_sphere(ray);
     printf("Área da esfera: %.2f", area);
     return 0;
 }
 
-double calcular_area_da_esfera(double raio) {
+double calculate_area_sphere(double raio) {
     return 3.14 * (raio * raio);
 }

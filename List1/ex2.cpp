@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    double velocidade, valor;
+    double speed, value;
 
     printf("Informe a velocidade: \n");
-    scanf("%lf", &velocidade);
+    scanf("%lf", &speed);
 
-    if (velocidade > 80.0) {
-        valor = (velocidade - 80.0) * 5;
-        printf("O valor a ser pago é: %.2f", valor);
+    if (speed > 80.0) {
+        value = (speed - 80.0) * 5;
+        printf("O valor a ser pago é: %.2f", value);
     }
 
     return 0;

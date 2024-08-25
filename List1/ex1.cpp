@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main(){
-    double volume, raio, altura, PI = 3.14;
+    double volume, ray, height, PI = 3.14;
 
     printf("Informe o raio e altura respctivamente: \n");    
-    scanf("%lf %lf", &raio, &altura);
+    scanf("%lf %lf", &ray, &height);
 
-    volume = PI * (raio * raio) * altura;
+    volume = PI * (ray * ray) * height;
 
     printf("O volume é: %.2f", volume);
     return 0;

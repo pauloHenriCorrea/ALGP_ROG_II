@@ -1,21 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    int l, c;
-
-    printf("Informe o número de linhas: ");
-    scanf("%d", &l);
-
-    printf("Informe o número de colunas: ");
-    scanf("%d", &c);
-
-    int m[l][c], valor;
-
+    int m[3][2], value;
     for(int i = 0; i < l; i++) {
         for(int j = 0; j < c; j++) {
             printf("M[%d][%d] = ", i, j);
-            scanf("%d", &valor);
-            m[i][j] = valor;
+            scanf("%d", &value);
+            m[i][j] = value;
         }
     }
 
@@ -26,9 +17,9 @@ int main() {
     int c_l = 0, c_c = 0, i, j;
 
     // Verifica se existe linhas nulas
-    for(i = 0; i < l; i++) {
+    for(i = 0; i < 3; i++) {
         bool l_null = true;
-        for(j = 0; j < c; j++){
+        for(j = 0; j < 2; j++){
             if (m[i][j] != 0) {
                 l_null = false;
             }
@@ -39,10 +30,10 @@ int main() {
     }
 
     // Verifica se existe linhas nulas
-    for(i = 0; i < c; i++) {
+    for(i = 0; i < 2; i++) {
         bool c_null = true;
 
-        for(j = 0; j < l; j++) {
+        for(j = 0; j < 3; j++) {
             printf("%d\t", m[j][i]);
             if(m[j][i] != 0) {
                 c_null = false;

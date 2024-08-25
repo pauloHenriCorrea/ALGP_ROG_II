@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <string.h>
 
-void imprime_vetor(char v[], int tamanho);
+void print_vetor(char v[], int size);
+
 int main() {
-    char nome[100];
+    char name[100];
 
     printf("Informe seu nome completo: ");
-    fgets(nome, 100, stdin);
-    // scanf("%s", nome);
+    fgets(name, 100, stdin);
 
-    int tamanho = strlen(nome) - 1;
+    int size = strlen(name) - 1;
 
-    if (tamanho <= 4 and nome[3] == ' ') {
-        imprime_vetor(nome, tamanho);
+    if (size <= 4 and name[3] == ' ') {
+        print_vetor(name, size);
         printf("OBS: qtd de letras inferior a quatro!!\n");
-    } else if (tamanho >= 4) {
-        tamanho = 4;
-        imprime_vetor(nome, tamanho);
+    } else if (size >= 4) {
+        size = 4;
+        print_vetor(name, size);
     } else {
         printf("O nome precisa ter no mínimo 3 letras.");
     }
 }
 
-void imprime_vetor(char v[], int tamanho){
-    printf("As %d primeiras letras:\n", tamanho);
-    for (int i = 0; i < tamanho; i++)
+void print_vetor(char v[], int size){
+    printf("As %d primeiras letras:\n", size);
+    for (int i = 0; i < size; i++)
         printf("%dº letra: %c\n", i + 1, v[i] == ' ' ? v[i + 1]: v[i]);
 }

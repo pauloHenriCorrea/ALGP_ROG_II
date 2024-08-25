@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-bool sufixo(int a, int b);
+bool suffix(int a, int b);
 int main() {
     int a = 0, b = 0;
 
@@ -10,22 +10,22 @@ int main() {
     printf("Informe o valor de B: ");
     scanf("%d", &b);
 
-    if (sufixo(a, b)) {
+    if (suffix(a, b)) {
         printf("Sufixo!");
     } else {
         printf("Não é sufixo!");
     }
     return 0;
 }
-bool sufixo(int a, int b) {
-    int resto_a, resto_b;
+bool suffix(int a, int b) {
+    int rest_a, rest_b;
     
     if(a >= b) {
         while(b > 0) {
-            resto_a = a % 10;
-            resto_b = b % 10;
+            rest_a = a % 10;
+            rest_b = b % 10;
 
-            if (resto_a != resto_b) {
+            if (rest_a != rest_b) {
                 return false;
             }
             a = a / 10;

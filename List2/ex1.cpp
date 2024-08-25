@@ -1,33 +1,30 @@
 #include <stdio.h>
 
-void ler_valores(int tamanho,  char nome_vetor, int vetor[]);
+void read_values(int size, char name_vector, int vector[]);
 
 int main () {
-    int tamanho, pd_escalar;
-    char nome_vetor;
+    int dot_product;
 
-    printf("Informe o tamanho do vetor: ");
-    scanf("%d", &tamanho);
+    int u[3], v[3];
 
-    int u[tamanho], v[tamanho];
+    read_values(3, 'u', u);
+    read_values(3, 'v', v);
 
-    ler_valores(tamanho, 'u', u);
-    ler_valores(tamanho, 'v', v);
-
-    for(int i = 0; i < tamanho; i++){
-        pd_escalar += (u[i] * v[i]);
+    for(int i = 0; i < 3; i++){
+        dot_product += (u[i] * v[i]);
     }
-    printf("O Produto Escalar é: %d", pd_escalar);
+    
+    printf("O Produto Escalar é: %d", dot_product);
 
     return 0;
 }
 
-void ler_valores(int tamanho, char nome_vetor, int vetor[]) {
-    int valor;
-    for(int i = 0; i < tamanho; i++) {
-        printf("%c[%d] = ", nome_vetor,i);
-        scanf("%d",&valor);
-        vetor[i] = valor;
+void read_values(int size, char name_vector, int vector[]) {
+    int value;
+    for(int i = 0; i < size; i++) {
+        printf("%c[%d] = ", name_vector,i);
+        scanf("%d",&value);
+        vector[i] = value;
     }
 
 }

@@ -1,21 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, soma = 0;
-    double media;
-    bool boleana = true;
+    int n, i, sum = 0;
+    double average;
+    bool boolean = true;
 
     printf("Informe um número: \n");
 
-    for (i = 1; boleana; i++) {
+    for (i = 1; boolean; i++) {
         scanf("%d", &n);
-        soma += n;
+        sum += n;
 
         if (n == 0)
-            boleana = false;
+            boolean = false;
     }
 
-    media = soma / i;
+    average = sum / i;
 
-    printf("A soma é: %d\nA média é: %lf", soma, media);
+    printf("A soma é: %d\nA média é: %lf", sum, average);
 }

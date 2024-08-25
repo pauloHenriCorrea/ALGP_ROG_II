@@ -41,7 +41,7 @@ void enter_data(musical_band band[FIVE], int ranking[FIVE]) {
         b[i].gender[strcspn(b[i].gender, "\n")]='\0';
 
         printf("\tNÚMERO DE INTEGRANTES: ");
-        scanf("%d", &b[i].number_members);
+        scanf("%d%*c", &b[i].number_members);
         
         printf("\tPOSIÇÃO NO RANKING: ");
         scanf("%d%*c", &b[i].ranking_position);
@@ -86,7 +86,7 @@ bool menu() {
     printf("\t4 - VERIFICAR SE A BANDA ESTÁ ENTRE AS 5 FAVORITAS;\n");
     printf("\t5 - SAIR;\n");
     printf("SUA RESPOSTA: ");
-    scanf("%c", &choise);
+    scanf("%c%*c", &choise);
 
     switch (choise) {
         case '1':

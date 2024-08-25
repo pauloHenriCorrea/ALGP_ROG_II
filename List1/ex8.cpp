@@ -2,7 +2,7 @@
 
 int main() {
     int n, i;
-    bool primo = true;
+    bool prime = true;
 
     printf("Informe um número: ");
     scanf("%d", &n);
@@ -14,12 +14,12 @@ int main() {
     } else {
         for (i = 3; i < n; i += 2) {
             if (n % i == 0) {
-                primo = false;
+                prime = false;
             }
         }
     }
 
-    if (primo){
+    if (prime){
         printf("PRIMO");
     } else {
         printf("NÃO É PRIMO");

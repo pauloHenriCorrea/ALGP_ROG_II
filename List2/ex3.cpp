@@ -1,35 +1,30 @@
 #include <stdio.h>
-int imprime_matriz(int **m, int linhas, int colunas);
+
+int print_matriz(int **m, int linhas, int colunas);
+
 int main() {
-
-    printf("Informe o número de linhas: ");
-    scanf("%d", &linhas);
-
-    printf("Informe o número de colunas: ");
-    scanf("%d", &colunas);
-
-    int valor, i, j, matriz[linhas][colunas], matriz_transposta[colunas][linhas];
+    int value, i, j, matriz[3][3], matriz_transposta[3][3];
 
     // Inserindo os valores na matriz
-    for(i = 0; i < linhas; i++){
-        for(j = 0; j < colunas; j++){
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
             printf("matriz[%d][%d] = ", i, j);
-            scanf("%d", &valor);
-            matriz[i][j] = valor;
-            matriz_transposta[j][i] = valor;
+            scanf("%d", &value);
+            matriz[i][j] = value;
+            matriz_transposta[j][i] = value;
         }
     }
 
     printf("Matriz:\n");
-    imprime_matriz(matriz, linhas, colunas);
+    print_matriz(matriz, 3, 3);
 
     printf("Matriz transposta:\n");
-    imprime_matriz(matriz_transposta, colunas, linhas);
+    print_matriz(matriz_transposta, 3, 3);
 
     return 0;
 }
 
-int imprime_matriz(int **m, int linhas, int colunas) {
+int print_matriz(int **m, int linhas, int colunas) {
     for(int i = 0; i < linhas; i++) {
         for(int j = 0; j < colunas; j++) {
             printf("%d\t", m[i][j]);
