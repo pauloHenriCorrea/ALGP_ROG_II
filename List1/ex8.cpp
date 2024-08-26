@@ -4,13 +4,13 @@ int main() {
     int n, i;
     bool prime = true;
 
-    printf("Informe um número: ");
+    printf("ENTER A NUMBER: ");
     scanf("%d", &n);
 
     if (n == 2) {
-        printf("PRIMO");
+        printf("IS PRIME");
     } else if (n == 1 || n == 0) {
-        printf("NÃO É PRIMO");
+        printf("IS NOT PRIME");
     } else {
         for (i = 3; i < n; i += 2) {
             if (n % i == 0) {
@@ -20,8 +20,8 @@ int main() {
     }
 
     if (prime){
-        printf("PRIMO");
+        printf("PRIME");
     } else {
-        printf("NÃO É PRIMO");
+        printf("IS NOT PRIME");
     }
 }

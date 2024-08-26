@@ -14,7 +14,7 @@ int main () {
         dot_product += (u[i] * v[i]);
     }
     
-    printf("O Produto Escalar é: %d", dot_product);
+    printf("THE SCALAR PRODUCT IS: %d", dot_product);
 
     return 0;
 }

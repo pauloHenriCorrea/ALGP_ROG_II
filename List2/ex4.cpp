@@ -2,8 +2,8 @@
 
 int main() {
     int m[3][2], value;
-    for(int i = 0; i < l; i++) {
-        for(int j = 0; j < c; j++) {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 2; j++) {
             printf("M[%d][%d] = ", i, j);
             scanf("%d", &value);
             m[i][j] = value;
@@ -11,12 +11,12 @@ int main() {
     }
 
     /*
-    c_c = contador de colunas nulas
-    c_l = contador de linhas nulas
+    c_c = null column counter
+    c_l = null lines counter
     */
     int c_l = 0, c_c = 0, i, j;
 
-    // Verifica se existe linhas nulas
+    // checks if there are null rows
     for(i = 0; i < 3; i++) {
         bool l_null = true;
         for(j = 0; j < 2; j++){
@@ -29,7 +29,7 @@ int main() {
         }
     }
 
-    // Verifica se existe linhas nulas
+    // checks if there are null coluns
     for(i = 0; i < 2; i++) {
         bool c_null = true;
 
@@ -47,6 +47,6 @@ int main() {
 
 
 
-    printf("O número de linhas nulas é: %d\nO número de colunas nulas é: %d", c_l,c_c);
+    printf("NUMBERS IN NULL LINES ARE: %d\nNUMBERS IN NULL COLUMNS ARE: %d", c_l,c_c);
     return 0;
 }

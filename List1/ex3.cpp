@@ -3,7 +3,7 @@
 int main() {
     double n1, n2, n3, aux;
 
-    printf("Informe 3 números: \n");
+    printf("ENTER THREE NUMBERS: \n");
     scanf("%lf %lf %lf", &n1, &n2, &n3);
 
     if (n1 > n2) {
@@ -23,5 +23,5 @@ int main() {
         n2 = n3;
         n3 = aux;
     }
-    printf("O maior é: %lf\nO menor é: %lf",n1, n3);
+    printf("THE GREATEST IS: %lf\nTHE SMALLEST IS: %lf",n1, n3);
 }

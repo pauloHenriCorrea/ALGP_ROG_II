@@ -35,13 +35,13 @@ void compare_string(musical_band band[FIVE], char s[FIFTY], char property[FIFTY]
         {
             if (strcmp(band[i].gender, s) == 0)
             {
-                printf("\tBANDA %d: %s \n", i + 1, band[i].name);
+                printf("\tBAND %d: %s \n", i + 1, band[i].name);
                 exist = true;
             };
         };
 
         if (!exist)
-            printf("NÃO EXISTE NENHUMA BANDA COM ESSE GÊNERO!\n");
+            printf("THERE IS NO BAND WITH THIS GENRE!\n");
     }
     else
     {
@@ -51,9 +51,9 @@ void compare_string(musical_band band[FIVE], char s[FIFTY], char property[FIFTY]
                 favorite = true;
 
         if (favorite)
-            printf("ESSA BANDA ESTÁ ENTRE AS 5 FAVORITAS!\n");
+            printf("THIS BAND IS AMONG THE TOP 5 FAVORITES!\n");
         else
-            printf("ESSA BANDA NÃO ESTÁ ENTRE AS 5 FAVORITAS!\n");
+            printf("THIS BAND IS'T AMONG THE TOP 5 FAVORITES!\n");
     };
 };
 
@@ -61,19 +61,19 @@ void enter_data(musical_band band[FIVE], int ranking[FIVE])
 {
     for (int i = 0; i < FIVE; i++)
     {
-        printf("INFORME OS DADOS DA %d° BANDA: \n", i + 1);
-        printf("\tNOME: ");
+        printf("ENTER THE DATA OF THE %d° BAND: \n", i + 1);
+        printf("\tNAME: ");
         fgets(band[i].name, FIFTY, stdin);
         band[i].name[strcspn(band[i].name, "\n")] = '\0';
 
-        printf("\tGÊNERO: ");
+        printf("\tGENDER: ");
         fgets(band[i].gender, FIFTY, stdin);
         band[i].gender[strcspn(band[i].gender, "\n")] = '\0';
 
-        printf("\tNÚMERO DE INTEGRANTES: ");
+        printf("\tNUMBERS OF MEMBERS: ");
         scanf("%d%*c", &band[i].number_members);
 
-        printf("\tPOSIÇÃO NO RANKING: ");
+        printf("\tCLASSIFICATION POSITION: ");
         scanf("%d%*c", &band[i].ranking_position);
 
         ranking[i] = band[i].ranking_position;
@@ -85,12 +85,12 @@ bool menu()
     musical_band band[FIVE];
     char choise;
 
-    printf("\t1 - INSERIR SUAS 5 BANDAS FAVORITAS;\n");
-    printf("\t2 - BUSCAR BANDA PELA POSIÇÃO;\n");
-    printf("\t3 - BUSCAR BANDAS PELO GÊNERO MÚSICAL;\n");
-    printf("\t4 - VERIFICAR SE A BANDA ESTÁ ENTRE AS 5 FAVORITAS;\n");
-    printf("\t5 - SAIR;\n");
-    printf("SUA RESPOSTA: ");
+    printf("\t1 - ENTER YOUR 5 FAVORITE BANDS;\n");
+    printf("\t2 - SEARCH FOR A BAND BY POSITION;\n");
+    printf("\t3 - SEARCH FOR BANDS BY MUSIC GENRE;\n");
+    printf("\t4 - CHECK IF THE BAND IS AMONG YOUR 5 FAVORITES;\n");
+    printf("\t5 - EXIT;\n");
+    printf("YOUR RESPONSE: ");
     scanf("%c%*c", &choise);
 
     switch (choise)
@@ -107,7 +107,7 @@ bool menu()
     case '2':
     {
         int band_position;
-        printf("INFORME UM NÚMERO DE 1 ATÉ 5\nSUA RESPOSTA: ");
+        printf("ENTER A NUMBER FROM 1 TO 5\nYOUR ANSWER: ");
         scanf("%d%*c", &band_position);
         band_position = check_ranking(band_position);
         search_band_by_position(band, band_position);
@@ -119,7 +119,7 @@ bool menu()
 
         char property[] = "gender";
         char gender_choise_response[FIFTY];
-        printf("INFORME SEU GÊNERO MUSICAL:");
+        printf("ENTER YOUR MUSICAL GENRE:");
         fgets(gender_choise_response, FIFTY, stdin);
         gender_choise_response[strcspn(gender_choise_response, "\n")] = '\0';
         compare_string(band, gender_choise_response, property);
@@ -130,7 +130,7 @@ bool menu()
     {
         char property[] = "is_favorite";
         char band_choise_response[FIFTY];
-        printf("INFORME O NOME DA BANDA: ");
+        printf("ENTER THE BAND NAME: ");
         fgets(band_choise_response, FIFTY, stdin);
         band_choise_response[strcspn(band_choise_response, "\n")] = '\0';
         compare_string(band, band_choise_response, property);
@@ -143,7 +143,7 @@ bool menu()
         break;
     }
     default:
-        printf("POR FAVOR, INSIRA UM NÚMERO DE 1 ATÉ 5!\n");
+        printf("PLEASE ENTER A NUMBER FROM 1 TO 5!\n");
         break;
     }
     return true;
@@ -206,9 +206,9 @@ void search_band_by_position(musical_band band[FIVE], int position)
     {
         if (band[i].ranking_position == position)
         {
-            printf("\tNOME: %s\n", band[i].name);
-            printf("\tGÊNERO: %s\n", band[i].gender);
-            printf("\tNÚMERO DE INTEGRANTES: %d\n", band[i].number_members);
+            printf("\tNAME: %s\n", band[i].name);
+            printf("\tGENDER: %s\n", band[i].gender);
+            printf("\tNUMBER OF MEMBERS: %d\n", band[i].number_members);
         };
     };
 };
@@ -217,10 +217,10 @@ void show_bands(musical_band band[FIVE])
 {
     for (int i = 0; i < FIVE; i++)
     {
-        printf("BANDA QUE ESTÁ EM %d° NO RANKING:\n", i + 1);
-        printf("\tNOME: %s\n", band[i].name);
-        printf("\tGÊNERO: %s\n", band[i].gender);
-        printf("\tNÚMERO DE INTEGRANTES: %d\n", band[i].number_members);
+        printf("BAND THAT IS AT %d° IN THE RANKING:\n", i + 1);
+        printf("\tNAME: %s\n", band[i].name);
+        printf("\tGENDER: %s\n", band[i].gender);
+        printf("\tNUMBER OF MEMBERS: %d\n", band[i].number_members);
     };
 };
 
@@ -231,7 +231,7 @@ int check_ranking(int band_position)
     {
         if (band_position > 5 && band_position < 1)
         {
-            printf("INFORME UM NÚMERO DE 1 ATÉ 5\nSUA RESPOSTA: ");
+            printf("ENTER A NUMBER FROM 1 TO 5\nYOUR ANSWER: ");
             scanf("%d%*c", &band_position);
         }
         else

@@ -3,7 +3,7 @@
 int main() {
     double n1, n2, entire, rest;
 
-    printf("Informe n1 e n2: \n");
+    printf("ENTER NUMBER ONE AND NUMBER TWO: \n");
     scanf("%lf %lf", &n1, &n2);
 
     while(n1 >= n2) {
@@ -11,6 +11,6 @@ int main() {
         rest = n1;
         entire ++;
     }
-    printf("O resto é: %lf\nA divisão inteira é: %lf", rest, entire);
+    printf("THE REST IS: %lf\nTHE ENTIRE DIVISION IS: %lf", rest, entire);
     return 0;
 }

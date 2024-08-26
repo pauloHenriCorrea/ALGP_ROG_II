@@ -9,16 +9,16 @@ int main() {
     participants participant;
     float value;
 
-    printf("Informe seu nome: ");
+    printf("INFORM YOUR NAME: ");
     fgets(participant.name, 50, stdin);
 
-    printf("Informe seu CPF: ");
+    printf("INFORM YOUR CPF: ");
     fgets(participant.CPF, 50, stdin);
 
-    printf("Tipo de Participação\tValor a Pagar\n-------------------------------------\nA - 1 Curso \tR$ 30,00\nB - 2 Cursos\tR$ 60,00\nC - 3 Cursos\tR$ 90,00\nD - 4 Cursos\tR$ 100,00\nSua resposta: ");
+    printf("TYPE OF PARTICIPATION?\tAMOUNT TO PAY\n-------------------------------------\nA - 1 COURSE \tR$ 30,00\nB - 2 COURSES\tR$ 60,00\nC - 3 COURSES\tR$ 90,00\nD - 4 COURSES\tR$ 100,00\nYOUR RESPONSE: ");
     fgets(&participant.participation_type, 50, stdin);
 
-    printf("Você é sócio: \nS - Sim\nN - Não\nSua resposta: ");
+    printf("IT'S A MEMBER? \nY - YES\nN - NOT\nYOUR RESPONSE: ");
     fgets(&participant.partner, 50, stdin);
 
     value = calculate_participation_value(participant);
@@ -47,7 +47,7 @@ float calculate_participation_value(participants p) {
         break;
     }
 
-    if(p.partner == 'S') {
+    if(p.partner == 'Y') {
         value *= 0.8;
     }
 

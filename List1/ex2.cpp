@@ -3,12 +3,12 @@
 int main() {
     double speed, value;
 
-    printf("Informe a velocidade: \n");
+    printf("ENTER THE SPEED: \n");
     scanf("%lf", &speed);
 
     if (speed > 80.0) {
         value = (speed - 80.0) * 5;
-        printf("O valor a ser pago é: %.2f", value);
+        printf("THE AMOUNT PAID IS: %.2f", value);
     }
 
     return 0;

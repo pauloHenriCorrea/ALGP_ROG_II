@@ -18,17 +18,17 @@ int main() {
     }
 
     while (num != 0) {
-        printf("Informe um número ente 1 e 60: \n");
+        printf("ENTER A NUMBER BETWEEN 1 AND 60: \n");
         scanf("%d", &num);
         if(num != 0) {
             if (check_exist_value(num, v)) {
-                printf("O número informado existe no vetor!\n");
+                printf("THE NUMBER INFORMED DOES NOT EXIST IN THE VECTOR!\n");
             } else {
-                printf("O número informado não existe no vetor!\n");
+                printf("THE NUMBER INFORMED EXIST IN THE VECTOR!\n");
             }
 
         }  else {
-            printf("FIM.");
+            printf("END.");
         }
     }
     

@@ -8,10 +8,9 @@ int main() {
     double kWh, value;
     char type;
 
-    printf("Informe a quantidade de kWh consumida e o tipo de instalação: \n");
+    printf("INFORM THE AMOUNT OF KWH CONSUMED AND THE TYPE OF INSTALLATION: \n");
     scanf("%lf %c", &kWh, &type);
 
-    printf("O valor a se pago é: %lf", value);
 
     switch (type) {
         case 'R':
@@ -30,6 +29,7 @@ int main() {
             printf("ERROR");
             break;
     }
+    printf("THE AMOUNT TO BE PAID IS: %lf", value);
 }
 
 double residential_calculation(double kWa) {

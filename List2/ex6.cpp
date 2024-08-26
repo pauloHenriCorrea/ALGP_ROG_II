@@ -4,16 +4,16 @@ bool suffix(int a, int b);
 int main() {
     int a = 0, b = 0;
 
-    printf("Informe o valor de A: ");
+    printf("INFORM THE VALUE OF A: ");
     scanf("%d", &a);
 
-    printf("Informe o valor de B: ");
+    printf("INFORM THE VALUE OF B: ");
     scanf("%d", &b);
 
     if (suffix(a, b)) {
-        printf("Sufixo!");
+        printf("SUFFIX!");
     } else {
-        printf("Não é sufixo!");
+        printf("IS NOT SUFFIX!");
     }
     return 0;
 }

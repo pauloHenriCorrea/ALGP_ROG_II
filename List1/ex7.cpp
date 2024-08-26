@@ -5,7 +5,7 @@ int main() {
     double average;
     bool boolean = true;
 
-    printf("Informe um número: \n");
+    printf("ENTER A NUMBER: \n");
 
     for (i = 1; boolean; i++) {
         scanf("%d", &n);
@@ -17,5 +17,5 @@ int main() {
 
     average = sum / i;
 
-    printf("A soma é: %d\nA média é: %lf", sum, average);
+    printf("THE SUM IS: %d\nTHE AVARAGE IS: %lf", sum, average);
 }
