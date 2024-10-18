@@ -11,6 +11,8 @@ typedef struct cel celula;
 
 
 // Prototipos
+celula *busca(int y, celula *lst);
+void busca_e_remova(int x, celula *lts);
 void imprima(celula *lst);
 
 /* A funcao insere uma nova celula em uma lista encadeada
@@ -19,7 +21,9 @@ void imprima(celula *lst);
  * */
 void insira(int y, celula *p);
 void insira_em_ordem(int y, celula *lst);
-celula *busca(int y, celula *lst);
+void remova_seguinte(celula *p);
+void remova_tudo(celula *lst);
+void remova_tudo_R(celula *lst);
 
 int main() {
     // Cria uma lista encadeada com cabeca 
@@ -38,7 +42,27 @@ int main() {
     insira_em_ordem(7, lst);
 
     imprima(lst);
+    busca(5, lst);
     return 0;
+}
+
+celula *busca(int x, celula *lst) {
+    celula *p;
+    p = lst;
+   
+    while(p->seg != NULL && p->content != x)
+        p = p->seg;
+    return p;
+}
+
+void busca_e_remova(int x, celula *lts) {
+    celula *p;
+
+    p = lts;
+    while(p->seg != NULL && p->seg->content != x)
+        p = p->seg;
+
+    remova_seguinte(p);
 }
 
 void imprima(celula *lst) {
@@ -71,10 +95,26 @@ void insira_em_ordem(int y, celula *lst) {
     insira(y , p);
 }
 
-celula *busca(int y, celula *lst) {
-    celula *p, *q;
+void remova_seguinte(celula *p) {
+    celula *lixo;
+
+    lixo = p->seg;
+    if (lixo != NULL)
+        p->seg = lixo->seg;
+    free(lixo);
+}
+
+void remova_tudo(celula * lst) {
+    celula *p;
     p = lst;
-    for(p->content; p->content == NULL || p->content == y; p = p->seg) {
-        
+    while(p->seg != NULL)
+        remova_seguinte(p);
+    free(p);
+}
+
+void remova_tudo_R(celula *lst) {
+    if(lst != NULL){
+        remova_tudo_R(lst->seg);
+        free(lst);
     }
 }
