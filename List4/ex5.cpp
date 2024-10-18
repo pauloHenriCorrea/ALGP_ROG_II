@@ -1,22 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-    int i, *notas, j;
+float calculete_avarage();
+int main() {
+    int n, i;
+    float *notas;
 
     printf("informe a quantidade de notas que deseja inserir: ");
-    scanf("%d", &i);
+    scanf("%d", &n);
 
-    notas = (int *)malloc(sizeof(int) * i);
+    notas = (float *) malloc(sizeof(int) * n);
 
     float nota;
-    for (j = 0; j < i; j++) {
-        printf("Informe a %d° nota: ", j + 1);
-        scanf("%f", nota);
-        notas[j] = nota;
+    for (i = 0; i < n; i++) {
+        printf("Informe a %d° nota: ", i + 1);
+        scanf("%f", &notas[i]);
     }
+
+    for (i = 0; i < n; i++)
+        printf("%d° nota: %.2f\n", i + 1, notas[i]);
 
     free(notas);
     return 0;
+}
+
+float calculete_avarage() {
+    
 }
