@@ -2,91 +2,89 @@
 #include <string.h>
 #define MAX 50
 
-struct pessoa
+struct people
 {
-    char nome[MAX];
-    float altura;
-    float peso;
+    char name[MAX];
+    float height;
+    float weight;
     char CPF[12];
-    char sexo;
+    char sex;
 };
 
-void buscar_pelo_CPF(pessoa v[], char CPF[12], int n);
-void buscar_pelo_sexo(pessoa v[], int n);
-float calcular_IMC(pessoa v[], int i);
-void forms(pessoa v[], int n);
+void search_by_CPF(people v[], char CPF[12], int n);
+void search_by_sex(people v[], int n);
+float calculate_IMC(people v[], int i);
+void forms(people v[], int n);
 bool menu();
 
-void buscar_pelo_CPF(pessoa v[], char CPF[12], int n)
+void search_by_CPF(people v[], char CPF[12], int n)
 {
-    bool continuar = true;
-    int resposta = 0;
+    int resposta = 2;
 
-    while (continuar)
+    while (resposta != 0)
     {
         for (int i = 0; i < n; i++)
             if (strcmp(v[i].CPF, CPF) == 0)
-                printf("%.2f", calcular_IMC(v, i));
+                printf("%.2f", calculate_IMC(v, i));
 
         printf("Deseja consultar outro CPF:\n(0) Nao\n(1) Sim ");
         scanf("%d", &resposta);
 
         if (resposta == 0)
-            continuar = false;
+            resposta = 0;
     }
 }
 
-void buscar_pelo_sexo(pessoa v[], int n)
+void search_by_sex(people v[], int n)
 {
     printf("\n\n");
     for (int i = 0; i < n; i++)
-        if (v[i].sexo == 'M')
-            printf("Nome: %s\nIMC: %.2f\n", v[i].nome, calcular_IMC(v, i));
+        if (v[i].sex == 'M')
+            printf("Nome: %s\nIMC: %.2f\n", v[i].name, calculate_IMC(v, i));
     printf("\n\n");
 }
 
-float calcular_IMC(pessoa v[], int i)
+float calculate_IMC(people v[], int i)
 {
-    float altura = v[i].altura, peso = v[i].peso;
-    float imc = peso / (altura * altura);
+    float height = v[i].height, weight = v[i].weight;
+    float imc = weight / (height * height);
     return imc;
 }
 
-void forms(pessoa v[], int n)
+void forms(people v[], int n)
 {
     for (int i = 0; i < n; i++)
     {
         printf("Informe os dados da %d\n", i + 1);
 
         printf("\tNome: ");
-        scanf(" %[^\n]", v[i].nome);
+        scanf(" %[^\n]", v[i].name);
 
         printf("\tAltura: ");
-        scanf("%f", &v[i].altura);
+        scanf("%f", &v[i].height);
 
         printf("\tPeso: ");
-        scanf("%f", &v[i].peso);
+        scanf("%f", &v[i].weight);
 
         printf("\tCPF: ");
         scanf(" %[^\n]", v[i].CPF);
 
         int escolha = 0;
-        bool continuar = true;
 
-        while (continuar)
+        while (escolha != 0)
         {
             printf("\tEscolha uma das opcoes abaixo:\n\t\t(1) Masculino\n\t\t(2) Feminino\n\t\tSua resposta: ");
             scanf("%d", &escolha);
 
             if (escolha == 1)
             {
-                v[i].sexo = 'M';
-                continuar = false;
+                v[i].sex = 'M';
+                escolha = 0;
             }
             else if (escolha == 2)
             {
-                v[i].sexo = 'F';
-                continuar = false;
+                v[i].sex = 'F';
+                escolha = 0;
             }
             else
                 printf("Opcao invalida");
@@ -98,9 +96,10 @@ bool menu()
 {
     // Declarando as variáveis
     int option = 0, n;
-    pessoa v[MAX];
+    people v[MAX];
     char CPF[12];
 
+    printf("\n\n");
     printf("Escolha uma das opcoes abaixo:\n");
     printf("\t(1) Cadastrar pessoa(s)\n");
     printf("\t(2) Consultar IMC pelo CPF\n");
@@ -122,11 +121,11 @@ bool menu()
         printf("Informe o numero do CPF que deseja buscar: ");
         scanf(" %[^\n]", CPF);
 
-        buscar_pelo_CPF(v, CPF, n);
+        search_by_CPF(v, CPF, n);
         break;
 
     case 3:
-        buscar_pelo_sexo(v, n);
+        search_by_sex(v, n);
         break;
 
     case 4:
